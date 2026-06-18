@@ -41,17 +41,17 @@
   .cabecalho {
     background: var(--verde);
     color: var(--branco);
-    padding: 14px 20px;
+    padding: 12px 16px;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
   }
   .cabecalho-logo {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     flex-shrink: 0;
     background: #fff;
-    border-radius: 8px;
+    border-radius: 6px;
     padding: 4px;
     display: flex;
     align-items: center;
@@ -62,10 +62,32 @@
     height: 100%;
     object-fit: contain;
   }
-  .cabecalho-texto { text-align: left; flex: 1; }
-  .cabecalho-texto .gov { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; margin-bottom: 2px; }
-  .cabecalho-texto .inst { font-size: 13px; font-weight: 700; line-height: 1.3; }
-  .cabecalho-texto .end { font-size: 10px; opacity: 0.75; margin-top: 4px; }
+  .cabecalho-texto { 
+    text-align: left; 
+    flex: 1;
+    min-width: 0;
+  }
+  .cabecalho-texto .gov { 
+    font-size: 10px; 
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
+    opacity: 0.9; 
+    margin-bottom: 2px;
+    font-weight: 600;
+  }
+  .cabecalho-texto .inst { 
+    font-size: 13px; 
+    font-weight: 700; 
+    line-height: 1.25;
+    word-wrap: break-word;
+  }
+  .cabecalho-texto .end { 
+    font-size: 9px; 
+    opacity: 0.8; 
+    margin-top: 3px;
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
 
   .titulo-doc {
     background: var(--amarelo);
@@ -400,8 +422,11 @@
   }
 
   @media (max-width: 600px) {
-    .cabecalho { flex-direction: column; text-align: center; }
+    .cabecalho { flex-direction: column; text-align: center; gap: 8px; padding: 10px 12px; }
+    .cabecalho-logo { width: 60px; height: 60px; }
     .cabecalho-texto { text-align: center; }
+    .cabecalho-texto .inst { font-size: 12px; }
+    .cabecalho-texto .end { font-size: 8px; }
     .linha-campo { flex-direction: column; }
     .campo-grupo { min-width: 100%; }
     .assinaturas-grid { grid-template-columns: 1fr; }
@@ -485,12 +510,21 @@
   <!-- CABEÇALHO -->
   <div class="cabecalho">
     <div class="cabecalho-logo">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/4QLcRXhpZgAATU0AKgAAAAgABAE7AAIAAAAGAAABSodpAAQAAAABAAABUJydAAEAAAAMAAACyOocAAcAAAEMAAAAPgAAAAAc6gAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA[...]
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Círculo verde externo -->
+        <circle cx="50" cy="50" r="48" fill="#1a5c2a" stroke="#2e7d3f" stroke-width="2"/>
+        <!-- Planta/Folha central -->
+        <path d="M 50 20 Q 45 35 50 50 Q 55 35 50 20 M 50 50 Q 40 55 30 60 M 50 50 Q 60 55 70 60" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- Gotas de água -->
+        <circle cx="35" cy="70" r="3" fill="#f5c518"/>
+        <circle cx="50" cy="75" r="2.5" fill="#f5c518"/>
+        <circle cx="65" cy="70" r="3" fill="#f5c518"/>
+      </svg>
     </div>
     <div class="cabecalho-texto">
       <div class="gov">Governo de Roraima</div>
-      <div class="inst">Instituto de Assistência Técnica e Extensão Rural do Estado de Roraima – IATER</div>
-      <div class="end">Av. Brigadeiro Eduardo Gomes, s/n, Bairro dos Estados &middot; Boa Vista | RR | CEP 69.305-455 &middot; iater.gab@gmail.com</div>
+      <div class="inst">Instituto de Assistência Técnica e Extensão Rural – IATER</div>
+      <div class="end">Av. Brigadeiro Eduardo Gomes, s/n &middot; Boa Vista | RR | iater.gab@gmail.com</div>
     </div>
   </div>
 
@@ -602,8 +636,8 @@
 
     <!-- AVISO -->
     <div class="aviso">
-      Os insumos acima especificados serão usados para a produção do milho do <strong>Projeto de Grãos</strong>. Os resíduos não utilizados da lavoura de grãos serão recolhidos para outro[...]
-      Os <strong>coordenadores e produtores</strong> dos polos de produção serão responsáveis pela guarda e armazenamento dos itens recebidos, protegendo-os do vento, sol, chuva e umidade. Is[...]
+      Os insumos acima especificados serão usados para a produção do milho do <strong>Projeto de Grãos</strong>. Os resíduos não utilizados da lavoura de grãos serão recolhidos para outro fim.<br><br>
+      Os <strong>coordenadores e produtores</strong> dos polos de produção serão responsáveis pela guarda e armazenamento dos itens recebidos, protegendo-os do vento, sol, chuva e umidade.
     </div>
 
     <!-- ASSINATURAS -->
